@@ -61,25 +61,11 @@
             "html":"https://github.com/Azure-Samples/html-docs-hello-world"
         },
         "gitRepoUrl":"[if(empty(parameters('repoUrl')), variables('gitRepoReference')[parameters('language')], parameters('repoUrl'))]",
-        "configReference": {
-            ".net": {
-                "comments": ".Net app. No additional configuration needed."
-            },
-            "html": {
-                "comments": "HTML app. No additional configuration needed."
-            },
-            "php": {
-                "phpVersion": "7.4"
-            },
-            "node": {
-                "appSettings": [
-                    {
-                        "name": "WEBSITE_NODE_DEFAULT_VERSION",
-                        "value": "12.15.0"
-                    }
-                ]
-            }
-        }
+        "defaultAppSettings": [
+            { "name": "DefaultSetting1", "value": "1"},
+            { "name": "DefaultSetting2", "value": "2"}
+        ],
+        "appSettings": "[variables('defaultAppSettings')]"
     },
     "resources": [
         {
@@ -101,7 +87,7 @@
             ],
             "properties": {
                 "siteConfig": {
-                    "appSettings": "[parameters('appSettings')]"
+                    "appSettings": "[variables('appSettings')]"
                 },
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServicePlanPortalName'))]"
             },

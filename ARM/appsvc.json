@@ -65,7 +65,7 @@
             { "name": "DefaultSetting1", "value": "1"},
             { "name": "DefaultSetting2", "value": "2"}
         ],
-        "appSettings": "[variables('defaultAppSettings')]"
+        "appSettings": "[union(variables('defaultAppSettings'), parameters('appSettings'))]"
     },
     "resources": [
         {

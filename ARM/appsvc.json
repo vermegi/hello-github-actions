@@ -46,7 +46,10 @@
         },    
         "appSettings": {
             "type": "array",
-            "defaultValue": [],
+            "defaultValue": [
+                { "name": "DefaultSetting3", "value": "3"},
+                { "name": "DefaultSetting4", "value": "4"}
+            ],
             "metadata": {
                 "description": "Array of appSettings"
             }

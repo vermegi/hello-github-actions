@@ -53,6 +53,13 @@
             "metadata": {
                 "description": "Array of appSettings"
             }
+        },
+        "one": {
+            "type": "string",
+            "defaultValue": "1",
+            "metadata": {
+                "description": "description"
+            }
         }
     },
     "variables": {
@@ -65,7 +72,7 @@
         },
         "gitRepoUrl":"[if(empty(parameters('repoUrl')), variables('gitRepoReference')[parameters('language')], parameters('repoUrl'))]",
         "defaultAppSettings": [
-            { "name": "DefaultSetting1", "value": "1"},
+            { "name": "DefaultSetting1", "value": "[parameters('one')]"},
             { "name": "DefaultSetting2", "value": "2"}
         ],
         "appSettings": "[union(variables('defaultAppSettings'), parameters('appSettings'))]"

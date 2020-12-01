@@ -56,7 +56,14 @@
         },
         "one": {
             "type": "string",
-            "defaultValue": "1",
+            "defaultValue": "one",
+            "metadata": {
+                "description": "description"
+            }
+        },
+        "five": {
+            "type": "string",
+            "defaultValue": "five",
             "metadata": {
                 "description": "description"
             }
